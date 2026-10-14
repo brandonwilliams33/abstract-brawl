@@ -66,6 +66,8 @@ npm run relay  # 仅运行联机房间中转（供 file:// 页面使用）
 
 ## 部署
 
+GitHub Pages 会在 `main` 更新时自动运行检查、构建并发布到 [GitHub Pages](https://brandonwilliams33.github.io/abstract-brawl/)。首次部署需在仓库 Settings → Pages 中将 Source 设为 GitHub Actions。
+
 Cloudflare Pages 的直接上传：运行 `npm run pack`，将 `releases/` 中的网页 ZIP 上传到 Pages 项目。ZIP 根目录就是 `index.html`，没有多套一层文件夹。
 
 通过 Git 集成部署时，构建命令填写 `npm run build`，输出目录填写 `dist`，使用 Node.js 22 或更新版本。纯静态托管即可，无需数据库或环境密钥。

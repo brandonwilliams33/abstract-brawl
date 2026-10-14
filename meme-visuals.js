@@ -6,6 +6,7 @@ async function load(loadImage,characters,append=false){
  const add=key=>{for(const r of art.clips?.[key]||[])needed.add(r.sheet);};
  if(!characters)Object.keys(art.sheets||{}).forEach(k=>needed.add(k));
  else for(const c of characters){
+  add(c.guardFx);
   for(const s of c.skills){
    add(s.fx);add(s.openingFx);add(s.extraShot);for(const fx of s.sequence||[])add(fx);
    if(s.form){
@@ -91,6 +92,7 @@ function projectile(g,p){
  return sprite(c,p.fx,p.x,p.y+(p.groundArt?p.size*.5:0),p.size,p.age||0,dir,1,!!p.groundArt);
 }
 function effect(g,e){
+ if(e.type==='shield'&&e.fx)return sprite(g.ctx,e.fx,e.x,e.y,75,g.age,1,Math.min(1,e.life*8));
  if(e.type==='meme'){sprite(g.ctx,e.fx,e.x,e.y,e.size||100,e.max-e.life,e.dir||1,Math.min(1,e.life*6));return true;}
  if(e.type==='wall'){
   if(e.fx==='cucumber_wall')sprite(g.ctx,e.fx,e.x,e.y,155,g.age,1,1,true);else for(let i=0;i<3;i++)sprite(g.ctx,e.fx,e.x,e.y-5-i*47,66,g.age,1,1,true);
