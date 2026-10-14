@@ -1,5 +1,5 @@
 const $=id=>document.getElementById(id);
-let selected=[ROSTER.findIndex(c=>c.name==='奶龙'),ROSTER.findIndex(c=>c.name==='电棍'),ROSTER.findIndex(c=>c.name==='贝拉'),ROSTER.findIndex(c=>c.name==='七海')],side=0,mode='cpu',difficulty=1,currentGame=null,sound=true;
+let selected=[ROSTER.findIndex(c=>c.name==='龙龙'),ROSTER.findIndex(c=>c.name==='电棍'),ROSTER.findIndex(c=>c.name==='贝拉'),ROSTER.findIndex(c=>c.name==='七海')],side=0,mode='cpu',difficulty=1,currentGame=null,sound=true;
 const net=new NetClient();
 const images=new Map(),animationSheets=new Map();let ready=false;
 const stagePicker=new StagePicker();let currentStage=null,starting=false,musicEnabled=true,musicStarted=false,startTicket=0;

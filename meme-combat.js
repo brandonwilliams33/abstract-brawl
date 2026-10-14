@@ -53,7 +53,7 @@ function emit(g,f,a){
   g.effect('super',f.x,f.y-90,f.data.color,.5,{radius:100});
   if(s.openingFx){
    g.effect('meme',f.x,f.y-80,f.data.color,1.15,{fx:s.openingFx,size:s.form==='dream_miyako'?470:270,dir:f.facing});
-   g.text('LIVE · 开播',f.x,f.y-230,'#ff7ea8',1.3,24);
+   if(!s.longlongEscape)g.text('LIVE · 开播',f.x,f.y-230,'#ff7ea8',1.3,24);
    const opening={...source(a),skill:{...s,type:'burst',fx:s.openingFx,damage:s.openingDamage||110,range:s.openingRange||300}};
    g.applyMelee(f,opening);
   }
